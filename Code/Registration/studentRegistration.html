@@ -1,0 +1,48 @@
+<!--Jaimee Pineda-->
+
+<!DOCTYPE html>
+<html lang="EN">
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Student Registration</title>
+	<link rel="stylesheet" type="text/css" href="jp_schoolbook.css" />
+  </head>
+  <body>
+	<img src="home.png" style="width:55px; height:70px;" alt="home">
+  
+	<div class="container">
+    <div class="row">
+	<div class="col-md-12">
+	<div class="wrap">
+					
+	<p class="form-title">
+		Student Registration
+	</p>
+	
+	<!--Must include action="" in form when implementing php-->
+	<form class="login" name="student registration" method="post" >
+		<input type="text" name="fName" maxlength="30" placeholder="First Name"> <br />
+		<input type="text" name="lName" maxlength="30" placeholder="Last Name"> <br />
+		<input type="text" name="studentID" maxlength="10" placeholder="Student ID"> <br />
+		
+		<p style="font-style: italic; font-size: 12px; font-weight: 400; letter-spacing: 1px; margin-bottom: 5px; color: #FFFFFF;">
+			School/University:
+		</p>
+		
+		<select name="subnav" id="subnav">
+			<option selected>Choose your school</option>
+			<option value="University of Maryland, Baltimore County">University of Maryland, Baltimore County</option>
+			<option value="University of Maryland, College Park">University of Maryland, College Park</option>
+			<option value="Montgomery College">Montgomery College</option>
+		</select> <br />
+		<input type="text" name="email" maxlength="30" placeholder="School e-mail (must end in .edu)"> <br />
+		<input type="image" src="button_submit.png" alt="Submit" />
+	</form>
+	
+	</div>
+	</div>
+	</div>
+	</div>
+
+  </body>
+</html>

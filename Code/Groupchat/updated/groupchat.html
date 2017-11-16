@@ -1,0 +1,74 @@
+<?xml version = "1.0"?>
+  <!DOCTYPE html PUBLIC "-//w3c//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+
+ <!-- Author: Priyanka Ranade-->
+  
+   <head>
+    <title>Chat</title>
+    <link rel="stylesheet" type="text/css" href="schoolbook.css"> </head>
+
+  <body>
+    <div id="container">
+      <header id="header"> <img src="logo.png" class="logosize" /> </header>
+      <!--left menu-->
+      <nav id="nav">
+        <div class="classesmenu"> <img src="webdev.png" class="menuimage" /> IS448- Web Dev </div>
+        <div class="classesmenu"> <img src="statistics1.png" class="menuimage" /> STAT351- Statistics </div>
+        <div class="classesmenu"> <img src="art.png" class="menuimage" /> ART380- Graphics </div>
+        <div class="classesmenu highlightclr"> <img src="database.png" class="menuimage" /> IS410- Database Dev </div>
+        <div class="classesmenu"> <img src="graph.jpg" class="menuimage" /> ECON375- World Econ </div>
+      </nav>
+      <!--Chat Box-->
+      <main id="main">
+        <div class="tab">
+          <button class="highlightclr"> <img src="users2.png" class="btnImage" />&nbsp;&nbsp;Groups </button>
+          <button class="tablinks"> <img src="users.png" alt="SchoolBook" class="btnImage" />&nbsp;&nbsp;Classmates </button>
+          <button class="tablinks"><img src="inbox.png" alt="SchoolBook" class="btnImage" />&nbsp;&nbsp;Inbox</button>
+          <button class="tablinks"><img src="settings.png" alt="SchoolBook" class="btnImage" />&nbsp;&nbsp;Profile</button>
+        </div>
+        <div class="dropdown">
+          <select>
+            <option value="is410"> Groupchat1</option>
+            <option value="stat">Groupchat2</option>
+            <option value="art">Groupchat3</option>
+            <option value="database">Groupchat4</option>
+            <option value="econ">Groupchat5 </option>
+			<option value = "img" > <img src= "plus.jpg" alt = "newgroup" > </option>
+          </select>
+          <!-- highlighted group chatting-->
+          <table>
+            <tr>
+              <td><img class="btnImage" src="users.png" /> Jane Doe </td>
+            </tr>
+            <tr>
+              <td><b>@John Doe</b> <img class="btnImage" src="drive.png" /> https://drive.google.com/drive/folders/0B1npj4AS4jNZZ</td>
+            </tr>
+            <tr>
+              <td style="background-color: #f1f1f1; text-align:center"> Just shared the folder on drive for the project </td>
+            </tr>
+            <tr>
+              <td style="background-color: #f1f1f1; text-align:center"> Johnny Appleseed just joined the group </td>
+            </tr>
+            <tr>
+              <td colspan="2" style="text-align: center"> <b> 6:18pm </b></td>
+            </tr>
+            <tr>
+              <td><img class="btnImage" src="users.png" /> John Doe </td>
+            </tr>
+            <tr>
+              <td> <b> @Johnny Appleseed Hey Johnny welcome to our group!</b> </td>
+            </tr>
+            <tr style="border: 1px solid black">
+              <td style="text-align: left"> <img class="btnImage" src="smiley.png" /> Send message... </td>
+              <td style="text-align: right"> <img class="btnImage" src="folder.png" /> </td>
+            </tr>
+          </table>
+        </div>
+      </main>
+      <footer id="footer"> <img class="footerimage" src="umbc.png" /> </footer>
+    </div>
+  </body>
+
+  </html>

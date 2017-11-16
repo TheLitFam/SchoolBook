@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!--Author: Mikhail Plungis -->
+<html xmlns = "http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Initialize Chat</title>
+		<link rel="stylesheet" type="text/css" href="schoolbook_groupForm.css"/>
+	</head>
+	<body>
+		<div id="header"> 
+			<a href="groupchat.html" ><img src="logo.png" alt="schoolbook_logo" class="logosize" /></a> 
+			<h1>
+				Form a new group: 
+			</h1>
+		</div>
+		
+		
+		
+		<div class="initial">
+			<form name="parameters" action="group_formation_send_invites.php" method="post" >
+				<p>Group Name: <input type="text" name="group_name" maxlength="50" /></p>
+				<p># of Members: <input type="text" name="nMembers" maxlength="50"/></p>
+				<p><button type="submit" >Form Group</button></p> 
+			</form>
+		</div>
+
+		
+	</body>
+	
+</html>

@@ -47,7 +47,7 @@
 		?>
 			
 			<p>			
-				Group Name: <?php print($name); ?>
+				Group Name: <?php print($name); ?> <br/>
 				# of Members: <?php print($num); ?> <br/>
 				<a href="group_formation_initial.html" > Edit Group </a>
 			</p>

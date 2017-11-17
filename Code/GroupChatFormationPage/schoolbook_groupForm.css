@@ -1,4 +1,4 @@
-/* Author: Priyanka Ranade */
+/* Author: Mikhail Plungis */
 
 body {
   margin: 20px;
@@ -13,7 +13,27 @@ h1 {
 	
 	font-size: 15;
 	color: white;
+	
 }
+
+form.login input[type="text"], form.login input[type="password"]
+{
+	width: 250px;
+    margin: 0;
+    padding: 5px 10px;
+    background: 0;
+    border: 0;
+    border-bottom: 1px solid #FFFFFF;
+    outline: 0;
+    font-style: italic;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    color: #FFFFFF;
+    outline: 0;
+}
+
 #container {
   display: flex;
   flex-flow: row wrap;
@@ -50,15 +70,13 @@ h1 {
 
 #aside {
   order: 4;
-  flex 0 1 100px;
+  flex: 0 1 100px;
 }
 
 #footer {
   border-radius:0px;
-  height: 25px;
-  margin: 0px;
+  margin: 30px;
   padding: 10px;
-  background-color: #F1F1F1;
   order: 5;
   flex: 0 1 100%;
 }

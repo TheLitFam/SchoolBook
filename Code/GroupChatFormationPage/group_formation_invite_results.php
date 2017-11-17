@@ -1,19 +1,20 @@
+<!--Author: Mikhail Plungis -->
 <!DOCTYPE html>
-<html lang="EN">
+<html lang="EN" >
 	<head>
 		<title>Invite Results </title>
-		<link rel="stylesheet" type="text/css" href="schoolbook_groupForm.css">
+		<link rel="stylesheet" type="text/css" href="schoolbook_groupForm.css"/>
 	</head>
 	<body>
 
-		<header id="header"> 
+		<div id="header"> 
 		
-			<a href="groupchat.html" > <img src="logo.png" class="logosize" /> </a> 
+			<a href="groupchat.html" ><img src="schoolbook-logo.png" alt="schoolbook_logo" class="logosize" /></a> 
 			<h1>
 				Invites Sent to... 
 			</h1>
 			
-		</header>
+		</div>
 		
 		<div class="names">
 		<?php
@@ -40,6 +41,5 @@
 		<a href="groupchat.html"> Return to profile </a>
 		</div>
 			
-		<footer id="footer"> <img class="footerimage" src="umbc.png" /> </footer>
 	</body>
 </html>

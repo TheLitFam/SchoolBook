@@ -1,21 +1,24 @@
+<!--Author: Mikhail Plungis -->
 <!DOCTYPE html>
 <html lang="EN">
 	<head>
 		<title>Send Invites</title>
-		<link rel="stylesheet" type="text/css" href="schoolbook_groupForm.css">
+		<link rel="stylesheet" type="text/css" href="schoolbook_groupForm.css"/>
 	</head>
 	<body>
-		<header id="header"> 
+		<div id="header"> 
 		
-			<a href="groupchat.html" > <img src="logo.png" class="logosize" /> </a> 
+			<a href="groupchat.html" ><img src="schoolbook-logo.png" alt="schoolbook_logo" class="logosize" /></a> 
 			<h1>
 				Form a new group:
 			</h1>
-		</header>
+		</div>
 		
 		
 		<div class="initial">
 		<?php
+			session_start();
+			$login_name = $_SESSION["login_user"];
 			
 			$name = $_POST["group_name"];
 			$num = $_POST["nMembers"];
@@ -34,8 +37,14 @@
 					print("<p>You must invite at least one new member!<br/> <a href=\"group_formation_initial.html\" > Edit Group </a></p>");
 				}
 			}
-			#this is where the chat name will be added to the database
-			?>
+			#this is where the chat name and admin name will be added to the database
+			$schoolbookDB = mysqli_connect("studentdb-maria.gl.umbc.edu","gy63575","gy63575","gy63575");
+			
+			$createGroup = "INSERT INTO GROUPCHATS(groupName, adminUserName) VALUES ('$name', '$login_name')";
+			
+			$query = mysqli_query($schoolbookDB, $createGroup);
+			
+		?>
 			
 			<p>			
 				Group Name: <?php print($name); ?>
@@ -46,7 +55,7 @@
 			
 		<div class="names">
 			
-			<form name="parameters" action="group_formation_invite_results.php" method="post">				
+			<form class="login" name="parameters" action="group_formation_invite_results.php" method="post">				
 				<?php 
 				$count = 1;
 				while($count <= $num){
@@ -58,14 +67,12 @@
 					
 				?>
 				<button type="submit">
-					Send Invites
+					<img src="button_submit.png" alt="Send Invites"/>
 				</button>
 			</form>		
 		
 		</div>
 
-		<footer id="footer"> <img class="footerimage" src="umbc.png" /> </footer>
-		</div>
 	</body>
 	
 </html>

@@ -40,10 +40,12 @@
 			#this is where the chat name and admin name will be added to the database
 			$schoolbookDB = mysqli_connect("studentdb-maria.gl.umbc.edu","gy63575","gy63575","gy63575");
 			
-			$createGroup = "INSERT INTO GROUPCHATS(groupName, adminUserName) VALUES ('$name', '$login_name')";
+			$createGroup = "INSERT INTO GROUPS(groupName, adminUserName) VALUES ('$name', '$login_name')";
 			
 			$query = mysqli_query($schoolbookDB, $createGroup);
 			
+			#give group name to next page
+			$_SESSION["groupName"] = $name;
 		?>
 			
 			<p>			
@@ -61,7 +63,7 @@
 				while($count <= $num){
 					$cStr = $count;
 					settype($cStr, "string");
-					print("<input type=\"text\" name=\"names$cStr\" maxlength=\"50\"> <br/>");	
+					print("<input type=\"text\" placeholder=\"Add Member\" name=\"names$cStr\" maxlength=\"50\"> <br/>");	
 					$count++;
 				}
 					

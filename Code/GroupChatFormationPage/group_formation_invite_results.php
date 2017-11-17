@@ -21,9 +21,13 @@
 			#get group chat name
 			session_start();
 			$groupName = $_SESSION["groupName"];
+			$adminName = $_SESSION["login_user"];
 			
 			#get user names
 			$names = array_values($_POST);	
+			array_push($names, $adminName);
+
+			#prime array of flags
 			$userExists = [];
 			
 			#check each name against the database
@@ -33,8 +37,9 @@
 				
 				$checkName = "SELECT * FROM USER WHERE username='$name'";
 				$doCheck = mysqli_query($schoolBookDB, $checkName);
+				$numUsers = mysqli_num_rows($doCheck);
 				
-				if($doCheck){
+				if($numUsers != 0){
 					$userExists[$name] = true;
 					$insertUser = "INSERT INTO ASSIGNEDGROUP (groupName, userName) VALUES ('$groupName', '$name')";
 					$addUserToGroup = mysqli_query($schoolBookDB, $insertUser);

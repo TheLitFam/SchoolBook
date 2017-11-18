@@ -6,6 +6,17 @@
  <!-- Author: Priyanka Ranade-->
   
    <head>
+
+<?php
+   include("classmates.php");
+   session_start();
+  if (!$db) {
+      die("Connection failed: " . mysqli_connect_error());
+  }
+  ?>
+    
+
+
     <title>Classmates</title>
     <link rel="stylesheet" type="text/css" href="schoolbook.css"> </head>
 

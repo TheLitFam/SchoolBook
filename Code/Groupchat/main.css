@@ -1,0 +1,40 @@
+/* Priyanka */
+html {
+    box-sizing: border-box;
+}
+
+/*Chat styling*/
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.chat {
+    min-width: 400px;
+    max-width: 400%;
+
+}
+
+.chat #chatOutput {
+    padding: 10px;
+    overflow-y: scroll;
+    height: 260px;
+    width: 400px;
+    border: 1px solid #777;
+}
+
+.chat #chatOutput p{
+    padding:5px;
+    border-bottom: 1px solid #bbb;
+    word-break: break-all;
+}
+
+.chat #chatInput {
+    width: 75%;
+}
+
+.chat #chatSend {
+    width: 25%;
+}

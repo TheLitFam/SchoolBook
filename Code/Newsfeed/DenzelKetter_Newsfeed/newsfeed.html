@@ -1,5 +1,9 @@
+<?php 
+	session_start();
+	$_SESSION[ 'views'] = 1;
+	//if(IsSet($_SESSION [" username "] ) && $_SESSION [ "username" ] == "") {
+	?>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-
 
  <!-- Author: Denzel Ketter-->
   
@@ -7,6 +11,7 @@
     <meta charset="utf-8">
     <title>Home</title>
     <link rel="stylesheet" type="text/css" href="dk_schoolbook.css" /> 
+    <script src ="jquery.min.js"></script>
 
 		<style "text/css">
 			input[type=text] {
@@ -36,8 +41,15 @@
     </head>
 
   <body>
+
+  	<!-- retrieve php session variables here -->
+  	<?php echo "Pageviews=". $_SESSION['views']; ?>
     <div id="container">
-      <header id="header"> <img src="./images/logo.png" alt="logo" class="logosize" /> </header>
+      <header id="header"> 
+      	<img src="./images/logo.png" alt="logo" class="logosize" />
+	</header>
+	
+			
       <!--left menu-->
       <nav id="nav">
 		
@@ -71,17 +83,19 @@
 			<h3> ECON375 - World Econ</h3> 
 		</div>
 
-
-	  <main id="main">
-		<form action="#" method="get" role="search">
 		
-		<!--Search Bar-->
+	  <main id="main">
+		<form action="#" method="get" role="search">	
+		
 			<input type="text" name="searchbar" placeholder="Search...">
 
 		<div class="toptab">
 			<button class="toptablinks" autofocus> <img src="./images/home.png" alt="home" class="btnImage" /> &nbsp; &nbsp; Home </button>
 			<button class="toptablinks"> <img src="./images/profile.png" alt="profile" class="btnImage" />&nbsp; &nbsp; Profile </button>
 			<button class="toptablinks"> <img src="./images/notifications.png" alt="notifications" class="btnImage" />&nbsp; &nbsp; Notifications </button>
+			<!--logout button -->
+			<a href="./logout.php">
+			<img class="btnImage" src="./images/small-logout.png" alt="logout" align="right" /> </a>	
 		</div>
 
 		</form>
@@ -91,11 +105,11 @@
       <!--Chat Box-->
 	  <nav id="chat-nav">
 	  <div class="nav-tab">
-     
-		  <a class="tablinks" href="#"><img src="./images/users2.png" alt="SchoolBook" class="btnImage" />&nbsp;&nbsp;Groups </a> 
-          <a class="tablinks" href="#"><img src="./images/users.png" alt="SchoolBook" class="btnImage" />&nbsp;&nbsp;Classmates </a>
-          <a class="tablinks" href="#"><img src="./images/inbox.png" alt="SchoolBook" class="btnImage" />&nbsp;&nbsp;Inbox</a>
-          <a class="tablinks" href="#"><img src="./images/settings.png" alt="SchoolBook" class="btnImage" />&nbsp;&nbsp;Settings</a>
+   
+		  <a class="tablinks" href="./groupchat.html"><img src="./images/users2.png" alt="SchoolBook" class="btnImage" />&nbsp;&nbsp;Groups  </a> 
+          <a class="tablinks" href="./classmates.html"><img src="./images/users.png" alt="SchoolBook" class="btnImage" />&nbsp;&nbsp;Classmates </a>
+          <a class="tablinks" href="./inbox.html"><img src="./images/inbox.png" alt="SchoolBook" class="btnImage" />&nbsp;&nbsp;Inbox </a>
+          <a class="tablinks" href="./settings.html"><img src="./images/settings.png" alt="SchoolBook" class="btnImage" />&nbsp;&nbsp;Settings </a>
 	  </div>
 	  </nav>
 
@@ -110,7 +124,12 @@
           </select>
 		</div>
 		<div class="chatroom">
-          <!-- highlighted group chatting-->
+		<frameset rows="65%,55%" framespacing="5" frameborder="yes" border="3" bordercolor="#FF0000">
+			<frame src="./chat/newsfeed_connect.php" name="activate_frame">
+			<frame src="./chat/newsfeed_chat.php" name="chat_frame">
+		
+
+          <!-- highlighted group chatting
           <table>
             <tr>
               <td><img class="btnImage" src="./images/female-icon.png" alt="female"/> Jane Doe </td>
@@ -125,10 +144,12 @@
               <td> We're selling muffins and cookies for only a dollar at the Commons Breezeway! See you all there! </td>
             </tr>
             <tr style="border: 1px solid black">
-              <td style="text-align: left"> <img class="btnImage" src="./images/smiley.png" alt="smiley"/> Send message... </td>
+              <td style="text-align: left"> <img class="btnImage" src="./images/smiley.png" alt="smiley"/><input type="text" id="chatInput" /> Send message... <input style ="button" value="Send" id="sendBtn"/> </td>
               <td style="text-align: right"> <img class="btnImage" src="./images/folder.png" alt="folder" /> </td>
             </tr>
-          </table>
+          </table> -->
+		  
+		 </frameset>
         </div>
       </main>
       <footer id="footer"> <img class="footerimage" src="./images/umbc.png" alt="footer" /> </footer>

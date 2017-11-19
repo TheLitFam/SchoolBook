@@ -1,8 +1,13 @@
 <?php 
 	session_start();
-	if(IsSet($_SESSION [" username "] ) && $_SESSION [ "username" ] == "") {
+	$_SESSION[ 'views'] = 1;
+	//if(IsSet($_SESSION [" username "] ) && $_SESSION [ "username" ] == "") {
 	?>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<?xml version = "1.0"?>
+  <!DOCTYPE html PUBLIC "-//w3c//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+
 
  <!-- Author: Denzel Ketter-->
   
@@ -40,8 +45,15 @@
     </head>
 
   <body>
+
+  	<!-- retrieve php session variables here -->
+  	<?php echo "Pageviews=". $_SESSION['views']; ?>
     <div id="container">
-      <header id="header"> <img src="./images/logo.png" alt="logo" class="logosize" /> </header>
+      <header id="header"> 
+      	<img src="./images/logo.png" alt="logo" class="logosize" />
+	</header>
+	
+			
       <!--left menu-->
       <nav id="nav">
 		
@@ -75,17 +87,19 @@
 			<h3> ECON375 - World Econ</h3> 
 		</div>
 
-
-	  <main id="main">
-		<form action="#" method="get" role="search">
 		
-		<!--Search Bar-->
+	  <main id="main">
+		<form action="#" method="get" role="search">	
+		
 			<input type="text" name="searchbar" placeholder="Search...">
 
 		<div class="toptab">
 			<button class="toptablinks" autofocus> <img src="./images/home.png" alt="home" class="btnImage" /> &nbsp; &nbsp; Home </button>
 			<button class="toptablinks"> <img src="./images/profile.png" alt="profile" class="btnImage" />&nbsp; &nbsp; Profile </button>
 			<button class="toptablinks"> <img src="./images/notifications.png" alt="notifications" class="btnImage" />&nbsp; &nbsp; Notifications </button>
+			<!--logout button -->
+			<a href="./logout.php">
+			<img class="btnImage" src="./images/small-logout.png" alt="logout" align="right" /> </a>	
 		</div>
 
 		</form>
@@ -95,7 +109,7 @@
       <!--Chat Box-->
 	  <nav id="chat-nav">
 	  <div class="nav-tab">
-     
+   
 		  <a class="tablinks" href="./groupchat.html"><img src="./images/users2.png" alt="SchoolBook" class="btnImage" />&nbsp;&nbsp;Groups  </a> 
           <a class="tablinks" href="./classmates.html"><img src="./images/users.png" alt="SchoolBook" class="btnImage" />&nbsp;&nbsp;Classmates </a>
           <a class="tablinks" href="./inbox.html"><img src="./images/inbox.png" alt="SchoolBook" class="btnImage" />&nbsp;&nbsp;Inbox </a>
@@ -114,7 +128,11 @@
           </select>
 		</div>
 		<div class="chatroom">
-          <!-- highlighted group chatting-->
+			<iframe src="./chat/newsfeed_chat.php" name="chat_frame" height="1000" width="1000">
+			</iframe>
+	
+
+          <!-- highlighted group chatting
           <table>
             <tr>
               <td><img class="btnImage" src="./images/female-icon.png" alt="female"/> Jane Doe </td>
@@ -132,7 +150,9 @@
               <td style="text-align: left"> <img class="btnImage" src="./images/smiley.png" alt="smiley"/><input type="text" id="chatInput" /> Send message... <input style ="button" value="Send" id="sendBtn"/> </td>
               <td style="text-align: right"> <img class="btnImage" src="./images/folder.png" alt="folder" /> </td>
             </tr>
-          </table>
+          </table> -->
+		  
+
         </div>
       </main>
       <footer id="footer"> <img class="footerimage" src="./images/umbc.png" alt="footer" /> </footer>
